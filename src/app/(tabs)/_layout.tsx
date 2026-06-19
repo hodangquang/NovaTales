@@ -1,7 +1,6 @@
-import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import { useColorScheme } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 import { Colors } from '@/constants/theme';
 
@@ -21,7 +20,7 @@ export default function TabLayout() {
           elevation: 8,
           shadowOpacity: 0.1,
           height: 60,
-          paddingBottom: 8,
+          paddingBottom: 0,
           paddingTop: 8,
         },
         tabBarLabelStyle: {
@@ -63,6 +62,15 @@ export default function TabLayout() {
           title: 'Thông báo',
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'notifications' : 'notifications-outline'} size={22} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="community"
+        options={{
+          title: 'Cộng đồng',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'people' : 'people-outline'} size={22} color={color} />
           ),
         }}
       />
